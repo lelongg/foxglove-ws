@@ -22,7 +22,7 @@ async fn main() -> anyhow::Result<()> {
             "/data".to_string(),
             "ros1".to_string(),
             "std_msgs/String".to_string(),
-            "string data".to_string(),
+            "string data".into(),
             "ros1msg".to_string(),
             false,
         )
@@ -32,7 +32,7 @@ async fn main() -> anyhow::Result<()> {
             "/data_latching".to_string(),
             "ros1".to_string(),
             "std_msgs/String".to_string(),
-            "string data".to_string(),
+            "string data".into(),
             "ros1msg".to_string(),
             true,
         )

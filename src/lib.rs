@@ -34,7 +34,7 @@
 //!             "/data".to_string(),
 //!             "ros1".to_string(),
 //!             "std_msgs/String".to_string(),
-//!             "string data".to_string(),
+//!             "string data".into(),
 //!             "ros1msg".to_string(),
 //!             false,
 //!         )
@@ -76,7 +76,7 @@ struct ServerChannelMessage {
     topic: String,
     encoding: String,
     schema_name: String,
-    schema: String,
+    schema: Vec<u8>,
     schema_encoding: String,
 }
 
@@ -433,7 +433,7 @@ impl FoxgloveWebSocket {
         topic: String,
         encoding: String,
         schema_name: String,
-        schema: String,
+        schema: Vec<u8>,
         schema_encoding: String,
         is_latching: bool,
     ) -> anyhow::Result<Channel> {
